@@ -60,6 +60,8 @@ class _ListPageState extends State<ListPage> {
             localLines.removeAt(index);
             setState(() {
               this.lines = localLines;
+              this.total =
+                  lines.fold(0.0, (t, e) => t + e.price * e.amount).toString();
             });
           },
         ),
